@@ -12,7 +12,7 @@ function [be] = gaussiana_neumann(msh, q, edge, n)
                  (pos_ == 2) * (1 + (1/sqrt(3)) ) / 2;
     %
     w = 1/2;
-                 
+    
     rs = @(x1_, y1_, x2_, y2_, xi_) [x1_; y1_] + xi_*[(x2_ - x1_) ; (y2_ - y1_)];
     abs_rs = @(x1_, y1_, x2_, y2_) sqrt( (x2_ - x1_)^2 + (y2_ - y1_)^2 );
     

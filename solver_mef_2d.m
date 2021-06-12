@@ -48,7 +48,7 @@ function [u] = solver_mef_2d(msh, diritchlet, neumann, num_elems, f)
                 x = msh.POS(node, 1);
                 y = msh.POS(node, 2);
 
-                K(node, node) = K(node, node) + G;
+                K(node, node) = G;
                 B(node) = B(node) + G*value(x,y);
             end
         end

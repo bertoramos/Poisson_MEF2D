@@ -17,7 +17,7 @@ check_conditions(msh, diritchlet, neumann);
 % Parametros generales
 NElems = size(msh.TRIANGLES, 1);
 global G
-G = eps^-1;
+G = 10^6;
 
 % Resuelve MEF
 u = solver_mef_2d(msh, diritchlet, neumann, NElems, f);

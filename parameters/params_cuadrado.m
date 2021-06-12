@@ -10,19 +10,22 @@ cuadrado;
 
 % Función f de la ecuación de poisson
 % -v(u) = f
-
 fsym(xt, yt) = 0;
+%fsym(xt, yt) = exp(-(xt-0.5)^2 - (yt - 0.5)^2);
 %fsym(xt, yt) = exp(-(xt-0.5)^2 - (yt-0.5)^2);
 %fsym(xt, yt) = 10*exp(-10*((xt-0.5)^2 + (yt-0.5)^2));
 
 
 % Condiciones de contorno
 % condition_type(label) = function
-neumann(7) =  @(x_, y_) 2; % 1
-neumann(9) =  @(x_, y_) -4; % 3
+diritchlet(7) =  @(x_, y_) 0; % 1
+diritchlet(8) = @(x_, y_) 1;
+diritchlet(9) = @(x_, y_) 1;
+diritchlet(10) = @(x_, y_) 1;
+%neumann(9) =  @(x_, y_) -4; % 3
 
-diritchlet(8) = @(x_, y_) 5; % 2
-diritchlet(10) = @(x_, y_) 0; % 4
+%diritchlet(8) = @(x_, y_) 5; % 2
+%diritchlet(10) = @(x_, y_) 0; % 4
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PARAMETROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
